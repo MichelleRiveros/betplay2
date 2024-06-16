@@ -11,12 +11,6 @@ import java.util.ArrayList;
 //Se define los metodos y funciones que se van a implementar con la clase jugador
 
 public interface JugadorRepository {
-
-        List<Jugador> loadJugadores(); //Metodo para leer la lista del tipo Jugador
-        void saveJugador(List<Jugador> elementos); //elementos es una lista (List<Jugador>) de todos los objetos que se desean guardar.
-        void createJugador(Jugador elemento); //elemento es el objeto de tipo Jugador que se desea agregar.
-        void updateJugador(Jugador elemento); //actualizar
-        void delateJugador(int id); //eliminar
-        Jugador getById(int id);
+        void agregar(Jugador persona,  ArrayList<Jugador> lista);   
 
 }
