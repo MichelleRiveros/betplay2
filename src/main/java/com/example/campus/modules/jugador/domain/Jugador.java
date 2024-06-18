@@ -1,7 +1,7 @@
 package com.example.campus.modules.jugador.domain;
 import java.sql.Date; //Se importa formato date de mysql
 
-import com.example.campus.persona.domain.Persona;
+import com.example.campus.GenericClass.domain.Persona;
 
 /* import java.util.Date; Importacion del formato date de java  */
 

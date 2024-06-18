@@ -3,11 +3,11 @@ package com.example.campus.modules.registros.domain;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.example.campus.GenericClass.application.CRUDPersona;
 import com.example.campus.modules.integranteCuerpoTecnico.application.RegistroIntegranteCuerpoTecnico;
 import com.example.campus.modules.integranteCuerpoTecnico.domain.IntegranteCuerpoTecnico;
 import com.example.campus.modules.jugador.application.RegistroJugador;
 import com.example.campus.modules.jugador.domain.Jugador;
-import com.example.campus.persona.application.CRUDPersona;
 
 public class Registrar {
 

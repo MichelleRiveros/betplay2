@@ -1,4 +1,4 @@
-package com.example.campus.persona.domain;
+package com.example.campus.GenericClass.domain;
 import java.sql.Date; //Se importa formato date de mysql
 /* import java.util.Date; Importacion del formato date de java  */
 

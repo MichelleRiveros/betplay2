@@ -1,4 +1,4 @@
-package com.example.campus.persona.application;
+package com.example.campus.GenericClass.application;
 
 import java.util.ArrayList;
 

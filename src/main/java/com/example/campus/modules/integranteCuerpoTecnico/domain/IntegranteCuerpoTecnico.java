@@ -1,9 +1,8 @@
 package com.example.campus.modules.integranteCuerpoTecnico.domain;
 
-import com.example.campus.persona.domain.Persona;
+import com.example.campus.GenericClass.domain.Persona;
 
 public class IntegranteCuerpoTecnico extends Persona {
-    
     private String rol;
 
     public IntegranteCuerpoTecnico(){}
