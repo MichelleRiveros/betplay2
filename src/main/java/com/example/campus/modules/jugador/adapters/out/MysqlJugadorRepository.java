@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement; //Lo que vamos a mandarle al sql lo que queremos ejecutar (LA CONSULTA) -> "SELECT * FROM pais;"
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.sql.Statement;
 
 import com.example.campus.GenericClass.adapters.out.MysqlRepository;
 import com.example.campus.modules.jugador.domain.Jugador;
@@ -13,11 +15,10 @@ import com.example.campus.modules.jugador.infrastrure.JugadorRepository;
 
 
 public class MysqlJugadorRepository extends MysqlRepository<Jugador> implements JugadorRepository {
+
     private final String url = "jdbc:mysql://localhost/betplaydb"; //LOCAL -> LA BASE DE DATOS DONDE VOY A MANDAR LOS DATOS
     private final String user = "campus2023"; //credenciales -> usuario de la base de datos
     private final String password = "campus2023";
-
-
 
 
     @Override
@@ -36,8 +37,18 @@ public class MysqlJugadorRepository extends MysqlRepository<Jugador> implements 
 
     @Override
     public List<Jugador> getAll(Jugador entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+        
+        ArrayList<Jugador> entidad = new ArrayList<Jugador>();
+        try (Connection connection = DriverManager.getConnection(url, user, password)){
+            String query = "SELECT nombre FROM jugador;" ; 
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()){
+                entidad.add(mapResultSetToEntity(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); //imprimir la excepcion
+        } return entidad;
     }
 
 
@@ -56,6 +67,8 @@ public class MysqlJugadorRepository extends MysqlRepository<Jugador> implements 
         preparedStatement.setString(2, entity.getNombre());
         return preparedStatement;
     }    
+
+
 
     
 }

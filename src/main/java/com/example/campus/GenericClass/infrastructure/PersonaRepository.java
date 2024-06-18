@@ -7,7 +7,4 @@ public interface PersonaRepository<T> {
     void delete(T entity); //eliminar
     T getById(T entity); //obtener por id
     List<T> getAll(T entity); //obtener todos
-    
-
-
 }

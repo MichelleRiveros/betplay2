@@ -13,6 +13,7 @@ public abstract class MysqlRepository<T> implements PersonaRepository<T> {
     private final String url = "jdbc:mysql://localhost/betplaydb"; //LOCAL -> LA BASE DE DATOS DONDE VOY A MANDAR LOS DATOS
     private final String user = "campus2023"; //credenciales -> usuario de la base de datos
     private final String password = "campus2023";
+    
     protected abstract T mapResultSetToEntity(ResultSet resultSet) throws SQLException; 
     protected abstract PreparedStatement createSavPreparedStatement(Connection connection, T entity) throws SQLException;
 

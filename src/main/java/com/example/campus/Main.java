@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.example.campus.modules.integranteCuerpoTecnico.domain.IntegranteCuerpoTecnico;
+import com.example.campus.modules.jugador.adapters.in.JugadorConsoleAdapter;
+import com.example.campus.modules.jugador.adapters.out.MysqlJugadorRepository;
+import com.example.campus.modules.jugador.application.JugadorService;
 import com.example.campus.modules.jugador.domain.Jugador;
 import com.example.campus.modules.registros.domain.Registrar;
 
@@ -33,6 +36,12 @@ public class Main {
             switch (opc) {
                 case 1:
                     registrar.registrar(sc,jugadoresDeFutbol, integrantesCuerpoTecnico);
+                    break;
+
+                case 2:
+                    MysqlJugadorRepository mysqlJugador = new MysqlJugadorRepository();
+                    JugadorService jugadorService = new JugadorService(mysqlJugador);
+                    JugadorConsoleAdapter consoleAdapter = new JugadorConsoleAdapter(jugadorService);
                     break;
 
                 default:

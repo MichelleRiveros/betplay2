@@ -15,6 +15,9 @@ import java.util.ArrayList;
 
 //Se define los metodos y funciones que se van a implementar con la clase jugador
 
-public interface JugadorRepository extends PersonaRepository<Jugador>{
-
+public interface JugadorRepository {
+    void save(Jugador entity); //agregar
+    void delete(Jugador entity); //eliminar
+    Jugador getById(Jugador entity); //obtener por id
+    List<Jugador> getAll(Jugador entity); //obtener todos
 }
